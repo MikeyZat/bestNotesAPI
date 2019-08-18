@@ -4,6 +4,10 @@ const router = express.Router();
 const Task = require('../models/task');
 
 
+router.get('/', function(req, res, next){
+    res.status(200).send("Welcome in Best Notes Api");
+});
+
 router.get('/getTasks/:name', function (req, res, next) {
     Task.find({username: req.params.name})
         .exec()
